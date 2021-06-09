@@ -19,7 +19,7 @@ class _$MovieSerializer implements StructuredSerializer<Movie> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      serializers.serialize(object.id, specifiedType: const FullType(int)),
       'title_english',
       serializers.serialize(object.titleEnglish,
           specifiedType: const FullType(String)),
@@ -44,7 +44,7 @@ class _$MovieSerializer implements StructuredSerializer<Movie> {
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(int)) as int;
           break;
         case 'title_english':
           result.titleEnglish = serializers.deserialize(value,
@@ -63,7 +63,7 @@ class _$MovieSerializer implements StructuredSerializer<Movie> {
 
 class _$Movie extends Movie {
   @override
-  final String id;
+  final int id;
   @override
   final String titleEnglish;
   @override
@@ -116,9 +116,9 @@ class _$Movie extends Movie {
 class MovieBuilder implements Builder<Movie, MovieBuilder> {
   _$Movie? _$v;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
 
   String? _titleEnglish;
   String? get titleEnglish => _$this._titleEnglish;

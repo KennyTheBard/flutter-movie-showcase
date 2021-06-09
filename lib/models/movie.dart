@@ -15,7 +15,7 @@ abstract class Movie implements Built<Movie, MovieBuilder> {
   Movie._();
 
   @BuiltValueField(wireName: 'id')
-  String get id;
+  int get id;
 
   @BuiltValueField(wireName: 'title_english')
   String get titleEnglish;
