@@ -15,17 +15,14 @@ class _$MovieSerializer implements StructuredSerializer<Movie> {
   final String wireName = 'Movie';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Movie object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(Serializers serializers, Movie object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(int)),
       'title_english',
-      serializers.serialize(object.titleEnglish,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.titleEnglish, specifiedType: const FullType(String)),
       'medium_cover_image',
-      serializers.serialize(object.coverImage,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.coverImage, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -43,16 +40,13 @@ class _$MovieSerializer implements StructuredSerializer<Movie> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'title_english':
-          result.titleEnglish = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.titleEnglish = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'medium_cover_image':
-          result.coverImage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.coverImage = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -69,21 +63,16 @@ class _$Movie extends Movie {
   @override
   final String coverImage;
 
-  factory _$Movie([void Function(MovieBuilder)? updates]) =>
-      (new MovieBuilder()..update(updates)).build();
+  factory _$Movie([void Function(MovieBuilder)? updates]) => (new MovieBuilder()..update(updates)).build();
 
-  _$Movie._(
-      {required this.id, required this.titleEnglish, required this.coverImage})
-      : super._() {
+  _$Movie._({required this.id, required this.titleEnglish, required this.coverImage}) : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'Movie', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        titleEnglish, 'Movie', 'titleEnglish');
+    BuiltValueNullFieldError.checkNotNull(titleEnglish, 'Movie', 'titleEnglish');
     BuiltValueNullFieldError.checkNotNull(coverImage, 'Movie', 'coverImage');
   }
 
   @override
-  Movie rebuild(void Function(MovieBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Movie rebuild(void Function(MovieBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   MovieBuilder toBuilder() => new MovieBuilder()..replace(this);
@@ -91,16 +80,12 @@ class _$Movie extends Movie {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Movie &&
-        id == other.id &&
-        titleEnglish == other.titleEnglish &&
-        coverImage == other.coverImage;
+    return other is Movie && id == other.id && titleEnglish == other.titleEnglish && coverImage == other.coverImage;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc(0, id.hashCode), titleEnglish.hashCode), coverImage.hashCode));
+    return $jf($jc($jc($jc(0, id.hashCode), titleEnglish.hashCode), coverImage.hashCode));
   }
 
   @override
@@ -157,13 +142,11 @@ class MovieBuilder implements Builder<Movie, MovieBuilder> {
     final _$result = _$v ??
         new _$Movie._(
             id: BuiltValueNullFieldError.checkNotNull(id, 'Movie', 'id'),
-            titleEnglish: BuiltValueNullFieldError.checkNotNull(
-                titleEnglish, 'Movie', 'titleEnglish'),
-            coverImage: BuiltValueNullFieldError.checkNotNull(
-                coverImage, 'Movie', 'coverImage'));
+            titleEnglish: BuiltValueNullFieldError.checkNotNull(titleEnglish, 'Movie', 'titleEnglish'),
+            coverImage: BuiltValueNullFieldError.checkNotNull(coverImage, 'Movie', 'coverImage'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: cast_nullable_to_non_nullable,avoid_equals_and_hash_code_on_mutable_classes,always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
